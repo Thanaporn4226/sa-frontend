@@ -152,7 +152,7 @@ function App() {
               <DrawerHeader />
               {/* function Route */}
               <Routes>
-                <Route path="/" element={<Home/>}/>
+                <Route path="/" element={<Home role={role}/>}/>
 
                 {/* Add element here!!!! and role  */}
                 { role === "admin" && <Route path='/' /> }
@@ -161,7 +161,7 @@ function App() {
                 { role === "admin" && <Route path='/'/> }
 
                 {/* intendant */}
-                { role === "intendant" && <Route path='/' element={<MedicineHome />} /> }
+                { role === "intendant" && <Route path='/medicines/Home' element={<MedicineHome />} /> }
                 { role === "intendant" && <Route path='/medicines' element={<Medicine />} /> }
                 { role === "intendant" && <Route path='/medicine/create' element={<MedicineCrate />} /> }
 

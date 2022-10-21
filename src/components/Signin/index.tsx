@@ -13,6 +13,8 @@ export default function Signin() {
     const [error, setError] = React.useState<boolean>(false)
 
     const [signin, setSignin] = React.useState<Partial<SigninInterface>>({})
+    const [employee, setEmployee] = React.useState<Partial<SigninInterface>>({})
+    const [userid, setUserid] = React.useState<number>(0);
 
     const handleClose: any = (event?: React.SyntheticEvent, reason?: string) => {
         if (reason === "clickaway") {
@@ -25,35 +27,36 @@ export default function Signin() {
 
     //function change state handle when typing 
 
-    const handleInputChange = (event : React.ChangeEvent<{id?:string; value: any}>) => {
+    const handleInputChange = (event: React.ChangeEvent<{ id?: string; value: any }>) => {
         const id = event.target.id as keyof typeof signin; //id will collect attribute key event
         const { value } = event.target; //value will collect value attribute
-        
-        setSignin({...signin, [id]: value})
+
+        setSignin({ ...signin, [id]: value })
     }
 
     const login = () => {
         const apiUrl = "http://localhost:8080/signin";
-        const requestOptions : any = {
+        const requestOptions: any = {
             method: "POST",
-            headers: {"Content-Type": "application/json"},
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(signin)
         }
 
         fetch(apiUrl, requestOptions)
-        .then((res) => res.json())
-        .then((res) =>{
-            if(res.data){
-                setSuccess(true);
-                // console.log(res.data)
-                localStorage.setItem("token",res.data.Token)
-                localStorage.setItem("uid",res.data.user_id)
-                localStorage.setItem("role",res.data.role_name)
-                window.location.reload()
-            }else{
-                setError(true)
-            }
-        })
+            .then((res) => res.json())
+            .then((res) => {
+                if (res.data) {
+                    setSuccess(true);
+                    // console.log(res.data)
+                    localStorage.setItem("token", res.data.Token)
+                    localStorage.setItem("lid", res.data.user_id)
+                    localStorage.setItem("uid", res.data.emp_id)
+                    localStorage.setItem("role", res.data.role_name)
+                    window.location.reload()
+                } else {
+                    setError(true)
+                }
+            })
     }
 
     return (
@@ -117,7 +120,7 @@ export default function Signin() {
                                 onClick={login}>
                                 Sign In
                             </Button>
-                            
+
                         </form>
                     </div>
                 </div>

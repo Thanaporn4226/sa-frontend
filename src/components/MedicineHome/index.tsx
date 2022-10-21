@@ -1,5 +1,5 @@
 import { Button, Container, Grid, Typography } from '@mui/material'
-import pic from "../../image/pic.jpg";
+import pic from "../../image/medicine.jpg";
 import { Link as RouterLink } from "react-router-dom";
 
 

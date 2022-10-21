@@ -25,7 +25,7 @@ export default function DrawerBar({ role, drawerWidth, handleDrawerClose, open ,
     }));
     const Listitemlink = () => {
         var menu: any[] = [
-            { "text": "A", "icon": <InboxIcon />, "link": "/" },
+            { "text": "หน้าแรก", "icon": <HomeIcon />, "link": "/" },
         ];
 
         if (role === "admin") {
@@ -36,7 +36,8 @@ export default function DrawerBar({ role, drawerWidth, handleDrawerClose, open ,
             ]
         } else if (role === "intendant") {
             menu = [
-                { "text" : "ระบบบันทึกข้อมูลยา",icon: <MedicalServicesIcon />, "link": "/"},
+                ...menu,
+                { "text" : "ระบบบันทึกข้อมูลยา",icon: <MedicalServicesIcon />, "link": "/medicines/Home"},
                 //{ "text": "A", "icon": <InboxIcon />, "link": "/" } form 
 
             ]
