@@ -26,7 +26,7 @@ import { MedicineCrate } from './components/MedicineCreate';
 import Home from './components/Home';
 import MedicineLabelCreate from './components/MedicineLabel/MedicineLabelCreate';
 import MedicineLabel from './components/MedicineLabel/MedicineLabel';
-import { MedicineLabelHome } from './components/Home/MedicineLabelHome';
+import { MedicineLabelHome } from './components/MedicineLabelHome';
 
 const drawerWidth = 240;
 
@@ -189,7 +189,7 @@ function App() {
                 )}
 
 
-{ role === "pharmacist" && <Route path='/medicine_label/home' element={<MedicineLabelHome />} /> }
+                { role === "pharmacist" && <Route path='/medicine_label/home' element={<MedicineLabelHome />} /> }
                 { role === "pharmacist" && <Route path='/medicine_labels' element={<MedicineLabel />} /> }
                 { role === "pharmacist" && <Route path='/medicine_labels/create' element={<MedicineLabelCreate />} /> }
 
