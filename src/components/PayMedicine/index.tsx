@@ -177,7 +177,7 @@ export default function PayMedicine() {
 
         setTimeout(()=>{
             navigator("/medicinepay")
-        }, 1500)
+        }, 800)
         
     }
 

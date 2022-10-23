@@ -13,8 +13,7 @@ export default function Signin() {
     const [error, setError] = React.useState<boolean>(false)
 
     const [signin, setSignin] = React.useState<Partial<SigninInterface>>({})
-    const [employee, setEmployee] = React.useState<Partial<SigninInterface>>({})
-    const [userid, setUserid] = React.useState<number>(0);
+
 
     const handleClose: any = (event?: React.SyntheticEvent, reason?: string) => {
         if (reason === "clickaway") {

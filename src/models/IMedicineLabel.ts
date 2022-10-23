@@ -2,14 +2,14 @@ import { time } from "console"
 import { EmployeeInterface } from "./IEmployee"
 
 export interface MedicineLabelInterface {
-    ID:number,
-    RecordingDate : Date,
-    MedicineUseID: number
-    MedicineUse : MedicineUseInterface,
-    WarningID: number,
-    Warning : WarningInterface,
-    EmployeeID: number,
-    Employee: EmployeeInterface
+    ID?: number,
+    RecordingDate? : Date | null,
+    MedicineUseID?: number,
+    MedicineUse: MedicineUseInterface,
+    WarningID?: number,
+	Warning: WarningInterface,
+    EmployeeID?: number,
+	Employee: EmployeeInterface,
 
 }
 
@@ -21,6 +21,6 @@ export interface MedicineUseInterface {
 }
 
 export interface WarningInterface {
-    ID: number, 
+    ID: number,
     Medicine_Warning: string,
 }

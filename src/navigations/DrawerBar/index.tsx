@@ -47,6 +47,8 @@ export default function DrawerBar({ role, drawerWidth, handleDrawerClose, open ,
                 ...menu,
                 { "text": "หน้าแรกระบบจ่ายยา", "icon": <DashboardIcon />, "link": "/PayMedicineHome" },
                 { "text": "หน้าแรกระบบสั่งยา", "icon": <HomeIcon />, "link": "/PrescriptionHome" },
+                { "text": "หน้าแรกระบบฉลากยา", "icon": <HomeIcon />, "link": "/medicine_label/home" },
+
                 
 
             ]
